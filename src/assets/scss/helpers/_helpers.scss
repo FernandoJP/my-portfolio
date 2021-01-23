@@ -1,0 +1,14 @@
+@import "_vars";
+@import "_mixins";
+
+.small-gutter {
+  padding: 20px;
+}
+
+.medium-gutter {
+  padding: 50px;
+}
+
+.huge-gutter {
+  padding: 100px;
+}
