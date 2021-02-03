@@ -1,0 +1,99 @@
+$bar-height: 5rem;
+$bar-width: 5rem;
+
+.skills {
+  &__bars {
+    position: relative;
+    display: flex;
+    margin-top: 2rem;
+  }
+
+  &__bar {
+    border: 10px solid;
+    border-right: 0;
+    border-image-source: linear-gradient(to right, #cdced1, #b6b7bb);
+    border-image-slice: 1;
+    margin-left: $bar-width * 1.5 - $bar-height / 2;
+    height: $bar-height;
+    background: rgb(223, 214, 217);
+    background: linear-gradient(
+      90deg,
+      rgba(223, 214, 217, 1) 0%,
+      rgba(248, 239, 242, 1) 35%,
+      rgba(161, 150, 154, 1) 100%
+    );
+    position: relative;
+    transition: 0.27s ease-in-out;
+
+    &:after {
+      content: "";
+      width: $bar-width;
+      height: 3.82rem;
+      border-radius: 0 50% 50% 0;
+      background-color: rgba(161, 150, 154, 1);
+      position: absolute;
+      right: -3rem;
+      bottom: -11px;
+      z-index: -1;
+      background-image: linear-gradient(#a1969a, #a1969a),
+        linear-gradient(to right, #b6b7bb, #b7b8bc);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      border: double 10px transparent;
+    }
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #a1969a;
+  }
+
+  &__label-container {
+    position: relative;
+    top: -$bar-height * 1.5;
+    width: $bar-width * 1.5;
+    height: $bar-height;
+    bottom: $bar-height / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7eef1;
+    border: 1px solid #ded5d8;
+
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-bottom: 2.5rem solid transparent;
+      border-left: 2.5rem solid #cdced1;
+      position: absolute;
+      right: 0;
+      bottom: -$bar-height / 2;
+    }
+  }
+}
+
+.pillars {
+  .pillar {
+    img {
+      height: 800px;
+    }
+  }
+  &__top {
+    display: inline;
+    img {
+      height: 227px;
+      margin: 0 auto;
+    }
+  }
+
+  &__left {
+    float: left;
+  }
+
+  &__right {
+    float: right;
+  }
+}
