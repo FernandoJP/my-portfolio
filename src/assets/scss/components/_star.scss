@@ -1,0 +1,60 @@
+@import "../helpers/vars";
+
+$star-size: 68px;
+
+.stars {
+  > * {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__container {
+    margin: 0 15px;
+  }
+
+  &__star {
+    display: inline-block;
+    height: $star-size;
+    transition: $animation-time-slow ease-in-out;
+    animation: star-animation $animation-time-slow normal ease-in-out;
+
+    @keyframes star-animation {
+      0% {
+        height: $star-size / 2;
+        filter: opacity(0);
+      }
+      100% {
+        height: $star-size;
+        filter: opacity(1);
+      }
+    }
+
+    &:before,
+    &:after {
+      content: "";
+
+      display: block;
+      width: 0;
+      height: 0;
+
+      position: absolute;
+      top: 0.6em;
+      left: -1em;
+
+      border-right: 1em solid transparent;
+      border-bottom: 0.7em solid #fc0;
+      border-left: 1em solid transparent;
+
+      transform: rotate(-35deg);
+    }
+
+    &:after {
+      transform: rotate(35deg);
+    }
+
+    &--hide {
+      height: $star-size / 2;
+      opacity: 0;
+    }
+  }
+}

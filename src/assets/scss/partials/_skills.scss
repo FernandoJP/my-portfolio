@@ -1,7 +1,12 @@
-$bar-height: 5rem;
+@import "../helpers/vars";
+
+$bar-height: 6rem;
 $bar-width: 5rem;
 
 .skills {
+  width: 70%;
+  margin: 0 auto;
+
   &__bars {
     position: relative;
     display: flex;
@@ -23,12 +28,13 @@ $bar-width: 5rem;
       rgba(161, 150, 154, 1) 100%
     );
     position: relative;
-    transition: 0.27s ease-in-out;
+    transition: $animation-time ease-in-out;
+    width: calc(100% - 100px);
 
     &:after {
       content: "";
       width: $bar-width;
-      height: 3.82rem;
+      height: 4.82rem;
       border-radius: 0 50% 50% 0;
       background-color: rgba(161, 150, 154, 1);
       position: absolute;
@@ -66,8 +72,8 @@ $bar-width: 5rem;
       content: "";
       width: 0;
       height: 0;
-      border-bottom: 2.5rem solid transparent;
-      border-left: 2.5rem solid #cdced1;
+      border-bottom: $bar-height/2 solid transparent;
+      border-left: $bar-height/2 solid #cdced1;
       position: absolute;
       right: 0;
       bottom: -$bar-height / 2;
