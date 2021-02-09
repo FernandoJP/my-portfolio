@@ -3,9 +3,16 @@
 $bar-height: 6rem;
 $bar-width: 5rem;
 
+.skills-bg {
+  background: #c33764;
+  background: -webkit-linear-gradient(to right, #1d2671, #c33764);
+  background: linear-gradient(to right, #1d2671, #c33764);
+}
+
 .skills {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
+  padding: 60px;
 
   &__bars {
     position: relative;
@@ -34,12 +41,12 @@ $bar-width: 5rem;
     &:after {
       content: "";
       width: $bar-width;
-      height: 4.82rem;
+      height: 4.78rem;
       border-radius: 0 50% 50% 0;
       background-color: rgba(161, 150, 154, 1);
       position: absolute;
       right: -3rem;
-      bottom: -11px;
+      bottom: -10px;
       z-index: -1;
       background-image: linear-gradient(#a1969a, #a1969a),
         linear-gradient(to right, #b6b7bb, #b7b8bc);
@@ -50,10 +57,14 @@ $bar-width: 5rem;
   }
 
   &__label {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: #fff;
     font-weight: bold;
     text-shadow: 1px 1px 1px #a1969a;
+
+    &--small {
+      font-size: 1.25rem;
+    }
   }
 
   &__label-container {
@@ -73,11 +84,156 @@ $bar-width: 5rem;
       width: 0;
       height: 0;
       border-bottom: $bar-height/2 solid transparent;
-      border-left: $bar-height/2 solid #cdced1;
+      border-left: $bar-height/2 solid #c5c5c6;
       position: absolute;
       right: 0;
       bottom: -$bar-height / 2;
     }
+  }
+
+  .shape {
+    position: absolute;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    animation: animate 10s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+  }
+
+  @keyframes animate {
+    0%,
+    100% {
+      transform: translateY(-40px);
+    }
+    50% {
+      transform: translateY(40px);
+    }
+  }
+
+  .shape:nth-child(1) {
+    top: -50px;
+    right: -60px;
+    width: 100px;
+    height: 100px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
+
+  .shape:nth-child(2) {
+    top: 10px;
+    left: -100px;
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+  }
+
+  .shape:nth-child(3) {
+    top: 50px;
+    right: -60px;
+    width: 80px;
+    height: 80px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  .shape:nth-child(4) {
+    bottom: -80px;
+    right: 90px;
+    width: 50px;
+    height: 50px;
+    clip-path: polygon(
+      50% 0%,
+      83% 12%,
+      100% 43%,
+      94% 78%,
+      68% 100%,
+      32% 100%,
+      6% 78%,
+      0% 43%,
+      17% 12%
+    );
+  }
+
+  .shape:nth-child(5) {
+    bottom: -80px;
+    right: 130px;
+    width: 60px;
+    height: 60px;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  }
+
+  .shape:nth-child(6) {
+    bottom: -80px;
+    left: 130px;
+    width: 90px;
+    height: 90px;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  }
+
+  .shape:nth-child(7) {
+    bottom: -10px;
+    left: -190px;
+    width: 50px;
+    height: 50px;
+    clip-path: polygon(
+      0% 15%,
+      15% 15%,
+      15% 0%,
+      85% 0%,
+      85% 15%,
+      100% 15%,
+      100% 85%,
+      85% 85%,
+      85% 100%,
+      15% 100%,
+      15% 85%,
+      0% 85%
+    );
+  }
+
+  .shape:nth-child(8) {
+    bottom: -30px;
+    right: -190px;
+    width: 120px;
+    height: 120px;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
+
+  .shape:nth-child(9) {
+    bottom: 60%;
+    left: -190px;
+    width: 80px;
+    height: 80px;
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+  }
+
+  .shape:nth-child(10) {
+    bottom: 40%;
+    right: -60px;
+    width: 160px;
+    height: 160px;
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 75%,
+      75% 75%,
+      75% 100%,
+      50% 75%,
+      0% 75%
+    );
   }
 }
 

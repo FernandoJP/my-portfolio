@@ -1,13 +1,13 @@
 window.addEventListener('scroll', () => {
-    const skillsEl = document.querySelectorAll('.skills__html');
-    const scrollY = window.scrollY / 100 - 3;
-    console.log(window.scrollY, scrollY);
-    //skillsEl.style.width = `calc(${updatedBarWidth}% - 9.0rem)`;
+    const skillsEl = document.querySelectorAll('[data-stars]');
 
     skillsEl.forEach((element, i) => {
-        console.log(element, i);
-        element.querySelectorAll('.stars__star').forEach((star, j) => {
-            if(scrollY-i > j) {
+        const elScrollY = window.outerHeight-element.getBoundingClientRect().top;
+         console.log(window.outerHeight / 2, i);
+         const windowHeight = window.outerHeight / 3;
+         element.querySelectorAll('.stars__star').forEach((star, j) => {
+            //if(i==4) console.log(windowHeight / 2 / j, elScrollY);
+            if(windowHeight / 2 * j < elScrollY) {
                 star.classList.remove('stars__star--hide')
                 !star.classList.contains('stars__star--visible') && star.classList.add('stars__star--visible');
             } else {
@@ -17,3 +17,14 @@ window.addEventListener('scroll', () => {
         });
     });
 });
+
+document.querySelectorAll('[data-stars]').forEach(starContainer => {
+    const starsQtd = starContainer.getAttribute('data-stars');
+    [...Array(parseInt(starsQtd)).keys()].forEach(index => {
+        starContainer.insertAdjacentHTML( 'beforeend', `
+            <div class="stars__container">
+                <img src="assets/images/star.svg" alt="Star icon" class="stars__star stars__star--hide">
+            </div>
+        `)
+    });
+})

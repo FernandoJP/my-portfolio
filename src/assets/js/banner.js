@@ -9,7 +9,6 @@ function paralax(e) {
 
         const x = (window.innerWidth - xOffset*speed) / 100;
         const y = (window.innerHeight - yOffset*speed) / 100;
-        console.log(yOffset, xOffset);
 
         layer.style.transform = `translateX(${x}px) translateY(${y}px)`;
     });
