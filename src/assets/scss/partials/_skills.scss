@@ -8,17 +8,39 @@ $bar-width: 5rem;
   background: #c33764;
   background: -webkit-linear-gradient(to right, #1d2671, #c33764);
   background: linear-gradient(to right, #1d2671, #c33764);
+  padding: 0;
+
+  @include desktop {
+    padding: 100px;
+  }
 }
 
 .skills {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-  padding: 60px;
+  padding: 30px 1px;
+  overflow: hidden;
+
+  @include tablet {
+    overflow: hidden;
+  }
+
+  @include desktop {
+    width: 80%;
+    margin: 0 auto;
+    padding: 60px;
+    overflow: visible;
+  }
 
   &__bars {
     position: relative;
     display: flex;
     margin-top: 2rem;
+    transform: scale(0.8);
+
+    @include desktop {
+      transform: scale(1);
+    }
   }
 
   &__bar {
@@ -79,6 +101,13 @@ $bar-width: 5rem;
     justify-content: center;
     background-color: #f7eef1;
     border: 1px solid #ded5d8;
+    transform: scale(0.8);
+    right: -9%;
+
+    @include desktop {
+      transform: scale(1);
+      right: 0;
+    }
 
     &:after {
       content: "";
