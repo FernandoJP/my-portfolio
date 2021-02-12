@@ -3,8 +3,7 @@
 .banner {
   position: relative;
   min-height: 100vh;
-  background: url(/assets/img/banner.jpg);
-  background-color: black;
+  background-color: #1c1c1c;
   background-size: cover;
   background-position: right;
   display: flex;
@@ -109,6 +108,7 @@
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
   }
 
   &__heading {
@@ -116,6 +116,7 @@
     position: absolute;
     transform: translateY(-50%);
     padding: 0;
+    z-index: 2;
 
     @include desktop {
       padding: 100px;
@@ -144,7 +145,7 @@
       color: #ccc;
       font-family: SourceCodePro-LightItalic;
       position: absolute;
-      left: 25%;
+      left: 27%;
     }
 
     &::after {
@@ -168,6 +169,7 @@
     color: #fff;
     font-weight: 500;
     z-index: 2;
+    margin-bottom: 1rem;
 
     &::before {
       content: "<p>";
@@ -190,19 +192,8 @@
     }
   }
 
-  &__btn {
+  &__btn-wrapper {
     position: relative;
-    background: #2196f3;
-    display: inline-block;
-    color: #fff;
-    margin-top: 20px;
-    padding: 10px 30px;
-    font-size: 1.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 2px;
-    font-weight: 500;
-    z-index: 2;
 
     &::before {
       content: "<a>";
@@ -210,20 +201,21 @@
       color: #ccc;
       font-family: SourceCodePro-LightItalic;
       position: absolute;
-      left: -30px;
-      margin-top: 5px;
       text-transform: lowercase;
+      position: absolute;
+      top: calc(50% - 8px);
     }
 
     &::after {
-      content: "</a>";
+      content: "<a>";
       font-size: 0.6em;
       color: #ccc;
       font-family: SourceCodePro-LightItalic;
       position: absolute;
-      right: -40px;
-      margin-top: 5px;
       text-transform: lowercase;
+      position: absolute;
+      top: calc(50% - 8px);
+      margin-left: -1.2rem;
     }
   }
 }

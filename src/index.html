@@ -11,15 +11,16 @@
 
 <body>
   <header class="header">
-    <a href="#" class="header__logo">fazer fernandopaula.dev</a>
+    <a href="#" class="header__logo">
+      <span>Fernando</span>
+      <span>de</span>
+      <span>Paula</span><span>.dev</span>
+    </a>
     <div class="header--toggle">
       <ul class="header__nav-list">
         <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Work</a></li>
-        <li><a href="#">Testimonial</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </header>
@@ -28,7 +29,15 @@
       <div class="banner__heading">
         <h1 class="banner__main-heading">Hello, I'm <br><span>Fernando de Paula.</span></h1>
         <p class="banner__secondary-heading">I'm a Mid-Level Front-end Web Developer.</p>
-        <a href="#" class="banner__btn">Contact me com anim</a>
+        <div class="banner__btn-wrapper">
+          <a href="#contact" class="banner__btn btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Contact me
+          </a>
+        </div>
       </div>
 
       <div class="banner__img-container">
@@ -48,21 +57,7 @@
     </div>
   </section>
 
-  <section class="about">
-    <div class="heading">
-      <h2>About Me</h2>
-    </div>
-    <div class="content">
-      <div class="contentBx w50">
-        <h3>I'm a Front-end Web Developer.</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste illum dolorem quam a delectus quaerat harum
-          veniam reprehenderit maxime voluptatibus, obcaecati hic possimus pariatur! Sint alias vitae molestiae nemo
-          debitis!</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="skills-bg">
+  <section class="skills-bg" id="skills">
     <div class="skills glassmorphism-bg">
       <div class="shape" style="--i:0;"></div>
       <div class="shape" style="--i:1;"></div>
@@ -146,9 +141,13 @@
         </div>
       </div>
     </div>
-
     </div>
   </section>
+
+  <section class="contact" id="contact">
+
+  </section>
+
   <div class="debug" style="height:1000px; border: 1px solid black"></div>
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300" rel="stylesheet">

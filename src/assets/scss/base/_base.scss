@@ -29,3 +29,13 @@ a {
   src: local("Silent Landfield"),
     url("../fonts/SourceCodePro-LightItalic.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: Logo;
+  src: url("../fonts/Logo.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Logo Middle;
+  src: url("../fonts/Logo-Middle.ttf") format("truetype");
+}
