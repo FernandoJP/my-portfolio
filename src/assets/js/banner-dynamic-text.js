@@ -13,6 +13,13 @@ async function init() {
 
 async function changeChars(textElement, text) {
     return new Promise((resolve) => {
+        const staticTextEl = document.querySelector('.banner__static-text');
+        debugger;
+        if(text.split('')[0].match(/^[AEYIUO]+$/)) {
+            staticTextEl.textContent = "I'm an";
+        } else {
+            staticTextEl.textContent = "I'm a";
+        }
         let currentCharsIndex = 0;
         textElement.textContent = text.split('')[0];
         const interval = setInterval(() => {
@@ -22,10 +29,8 @@ async function changeChars(textElement, text) {
                 clearInterval(interval);
                 const textCaretEl = document.querySelector('.banner__text-caret');
                 textCaretEl.style.display = 'inline-block';
-                console.log(textCaretEl);
                 setTimeout(() => {
                     textCaretEl.style.display = 'none';
-                    console.log(textCaretEl);
                     resolve();
                 }, 3250);
             }
