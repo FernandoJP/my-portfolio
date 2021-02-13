@@ -23,6 +23,6 @@ window.addEventListener('scroll', () => {
     const value = window.scrollY;
     const bannerHeading = document.querySelector('.banner__heading');
 
-    bannerHeading.style.top = `calc(50% + ${value * 0.15}px)`;
-    bannerHeading.style.opacity = `${100 - value * 0.15}%`;
+    bannerHeading.style.top = `calc(50% + ${value * 0.25}px)`;
+    bannerHeading.style.opacity = `${100 - value * 0.25}%`;
 });

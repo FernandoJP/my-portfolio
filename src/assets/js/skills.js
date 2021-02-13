@@ -3,10 +3,8 @@ window.addEventListener('scroll', () => {
 
     skillsEl.forEach((element, i) => {
         const elScrollY = window.outerHeight-element.getBoundingClientRect().top;
-         console.log(window.outerHeight / 2, i);
          const windowHeight = window.outerHeight / 3;
          element.querySelectorAll('.stars__star').forEach((star, j) => {
-            //if(i==4) console.log(windowHeight / 2 / j, elScrollY);
             if(windowHeight / 2 * j < elScrollY) {
                 star.classList.remove('stars__star--hide')
                 !star.classList.contains('stars__star--visible') && star.classList.add('stars__star--visible');

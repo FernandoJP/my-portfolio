@@ -132,6 +132,11 @@ gulp.task('images', () => {
     .pipe(browserSync.stream());
 });
 
+gulp.task('copyFonts', () => {
+  return gulp.src(src_assets_folder+'fonts/**/*')
+  .pipe(gulp.dest(dist_assets_folder+'fonts'))
+});
+
 gulp.task('vendor', () => {
   if (node_dependencies.length === 0) {
     return new Promise((resolve) => {

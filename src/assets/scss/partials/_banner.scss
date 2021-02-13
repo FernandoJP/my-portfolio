@@ -1,8 +1,9 @@
+@import "../helpers/mixins";
+
 .banner {
   position: relative;
   min-height: 100vh;
-  background: url(/assets/img/banner.jpg);
-  background-color: black;
+  background-color: #1c1c1c;
   background-size: cover;
   background-position: right;
   display: flex;
@@ -16,6 +17,8 @@
     overflow: hidden;
     justify-content: center;
     align-items: center;
+    display: flex;
+    text-align: center;
 
     img {
       -o-object-fit: cover;
@@ -105,21 +108,54 @@
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
   }
 
   &__heading {
     top: 50%;
     position: absolute;
     transform: translateY(-50%);
+    padding: 0;
+    z-index: 2;
+
+    @include desktop {
+      padding: 100px;
+    }
   }
 
   &__main-heading {
     position: relative;
-    font-size: 3em;
+    font-size: 2.1em;
     color: #fff;
     font-weight: 500;
     line-height: 1.2em;
     z-index: 2;
+
+    @include desktop {
+      font-size: 3em;
+    }
+
+    @include tablet {
+      font-size: 2.65em;
+    }
+
+    &::before {
+      content: "<h1>";
+      font-size: 0.4em;
+      color: #ccc;
+      font-family: SourceCodePro-LightItalic;
+      position: absolute;
+      left: 27%;
+    }
+
+    &::after {
+      content: "</h1>";
+      font-size: 0.4em;
+      color: #ccc;
+      font-family: SourceCodePro-LightItalic;
+      position: absolute;
+      right: -60px;
+    }
 
     span {
       font-size: 1.5em;
@@ -133,20 +169,77 @@
     color: #fff;
     font-weight: 500;
     z-index: 2;
+    margin-bottom: 1rem;
+
+    &::before {
+      content: "<p>";
+      font-size: 0.6em;
+      color: #ccc;
+      font-family: SourceCodePro-LightItalic;
+      position: absolute;
+      transform: translateX(-30px);
+      top: 5px;
+    }
+
+    &::after {
+      content: "</p>";
+      font-size: 0.6em;
+      color: #ccc;
+      font-family: SourceCodePro-LightItalic;
+      position: absolute;
+      margin-left: 5px;
+      top: 5px;
+    }
   }
 
-  &__btn {
+  &__btn-wrapper {
     position: relative;
-    background: #2196f3;
-    display: inline-block;
-    color: #fff;
-    margin-top: 20px;
-    padding: 10px 30px;
-    font-size: 1.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 2px;
-    font-weight: 500;
-    z-index: 2;
+
+    &::before {
+      content: "<a>";
+      font-size: 0.6em;
+      color: #ccc;
+      font-family: SourceCodePro-LightItalic;
+      position: absolute;
+      text-transform: lowercase;
+      top: calc(50% - 8px);
+    }
+
+    &::after {
+      content: "<a>";
+      font-size: 0.6em;
+      color: #ccc;
+      font-family: SourceCodePro-LightItalic;
+      position: absolute;
+      text-transform: lowercase;
+      position: absolute;
+      top: calc(50% - 8px);
+      margin-left: -1.2rem;
+    }
+  }
+
+  &__dynamic-text {
+    margin-right: 4px;
+  }
+
+  &__text-caret {
+    animation: text-caret-animation 1.5s infinite forwards
+      cubic-bezier(0, 1.31, 0.33, 0.81);
+    height: 20px;
+    width: 2px;
+    display: none;
+    background-color: #fff;
+
+    @keyframes text-caret-animation {
+      0% {
+        filter: opacity(0);
+      }
+      50% {
+        filter: opacity(1);
+      }
+      100% {
+        filter: opacity(0);
+      }
+    }
   }
 }

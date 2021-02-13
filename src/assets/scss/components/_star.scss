@@ -1,15 +1,34 @@
 @import "../helpers/vars";
+@import "../helpers/mixins";
 
-$star-size: 68px;
+$star-size: 4.2rem;
 
 .stars {
+  transform: scale(0.6);
+
+  @include tablet {
+    transform: scale(1);
+  }
+
+  @include desktop {
+    transform: scale(1);
+  }
+
   > * {
     display: flex;
     justify-content: center;
   }
 
   &__container {
-    margin: 0 15px;
+    margin: 0;
+
+    @include tablet {
+      margin: 0 7.5px;
+    }
+
+    @include desktop {
+      margin: 0 15px;
+    }
   }
 
   &__star {
