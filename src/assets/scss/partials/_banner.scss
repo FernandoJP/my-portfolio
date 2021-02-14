@@ -177,7 +177,7 @@
       color: #ccc;
       font-family: SourceCodePro-LightItalic;
       position: absolute;
-      left: 75px;
+      transform: translateX(-30px);
       top: 5px;
     }
 
@@ -202,7 +202,6 @@
       font-family: SourceCodePro-LightItalic;
       position: absolute;
       text-transform: lowercase;
-      position: absolute;
       top: calc(50% - 8px);
     }
 
@@ -216,6 +215,31 @@
       position: absolute;
       top: calc(50% - 8px);
       margin-left: -1.2rem;
+    }
+  }
+
+  &__dynamic-text {
+    margin-right: 4px;
+  }
+
+  &__text-caret {
+    animation: text-caret-animation 1.5s infinite forwards
+      cubic-bezier(0, 1.31, 0.33, 0.81);
+    height: 20px;
+    width: 2px;
+    display: none;
+    background-color: #fff;
+
+    @keyframes text-caret-animation {
+      0% {
+        filter: opacity(0);
+      }
+      50% {
+        filter: opacity(1);
+      }
+      100% {
+        filter: opacity(0);
+      }
     }
   }
 }

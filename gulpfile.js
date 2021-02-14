@@ -133,8 +133,7 @@ gulp.task('images', () => {
 });
 
 gulp.task('copyFonts', () => {
-  console.log(src_assets_folder+'fonts/*');
-  return gulp.src(src_assets_folder+'fonts/*')
+  return gulp.src(src_assets_folder+'fonts/**/*')
   .pipe(gulp.dest(dist_assets_folder+'fonts'))
 });
 
