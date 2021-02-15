@@ -171,6 +171,8 @@ gulp.task('watch', () => {
   const watchImages = [
     src_assets_folder + 'images/**/*.+(png|jpg|jpeg|gif|svg|ico)'
   ];
+  
+  const watchFonts = src_assets_folder+'fonts/**/*';
 
   const watchVendor = [];
 
@@ -190,6 +192,7 @@ gulp.task('watch', () => {
 
   gulp.watch(watch, gulp.series('dev')).on('change', browserSync.reload);
   gulp.watch(watchImages, gulp.series('images')).on('change', browserSync.reload);
+  gulp.watch(watchFonts, gulp.series('copyFonts')).on('change', browserSync.reload);
   gulp.watch(watchVendor, gulp.series('vendor')).on('change', browserSync.reload);
 });
 

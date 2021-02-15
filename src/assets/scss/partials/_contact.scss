@@ -1,0 +1,126 @@
+@import "../helpers/vars";
+@import "../helpers/mixins";
+
+.contact {
+  background: #151521;
+  padding: 0;
+
+  &__form-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 1px;
+    overflow: hidden;
+    z-index: 5;
+
+    @include tablet {
+      overflow: hidden;
+    }
+
+    @include desktop {
+      width: 60%;
+      margin: 0 auto;
+      padding: 60px;
+      overflow: visible;
+    }
+  }
+
+  &__bars {
+    position: relative;
+    display: flex;
+    margin-top: 2rem;
+    transform: scale(0.8);
+
+    @include desktop {
+      transform: scale(1);
+    }
+  }
+
+  &__bar {
+    border: 10px solid;
+    border-right: 0;
+    border-image-source: linear-gradient(to right, #cdced1, #b6b7bb);
+    border-image-slice: 1;
+    margin-left: $bar-width * 1.5 - $bar-height / 2;
+    height: $bar-height;
+    background: rgb(223, 214, 217);
+    background: linear-gradient(
+      90deg,
+      rgba(223, 214, 217, 1) 0%,
+      rgba(248, 239, 242, 1) 35%,
+      rgba(161, 150, 154, 1) 100%
+    );
+    position: relative;
+    transition: $animation-time ease-in-out;
+    width: calc(100% - 100px);
+
+    &:after {
+      content: "";
+      width: $bar-width;
+      height: 4.78rem;
+      border-radius: 0 50% 50% 0;
+      background-color: rgba(161, 150, 154, 1);
+      position: absolute;
+      right: -3rem;
+      bottom: -10px;
+      z-index: -1;
+      background-image: linear-gradient(#a1969a, #a1969a),
+        linear-gradient(to right, #b6b7bb, #b7b8bc);
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      border: double 10px transparent;
+    }
+  }
+
+  &__label {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #a1969a;
+
+    &--small {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__label-container {
+    position: relative;
+    top: -$bar-height * 1.5;
+    width: $bar-width * 1.5;
+    height: $bar-height;
+    bottom: $bar-height / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7eef1;
+    border: 1px solid #ded5d8;
+    transform: scale(0.8);
+    right: -9%;
+
+    @include desktop {
+      transform: scale(1);
+      right: 0;
+    }
+
+    &:after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-bottom: $bar-height/2 solid transparent;
+      border-left: $bar-height/2 solid #c5c5c6;
+      position: absolute;
+      right: 0;
+      bottom: -$bar-height / 2;
+    }
+  }
+
+  &__bg {
+    position: relative;
+
+    &-sky,
+    &-ground,
+    &-montain {
+      position: absolute;
+      z-index: 0;
+    }
+  }
+}
