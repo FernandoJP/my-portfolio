@@ -6,7 +6,7 @@ $line-width: 12rem;
 $color: rgba(255, 255, 255, 0.85);
 
 .section-title {
-  .section-title__text {
+  &__text {
     display: flex;
     justify-content: center;
     color: $color;
@@ -14,7 +14,7 @@ $color: rgba(255, 255, 255, 0.85);
     text-shadow: 0px 2px 2px #000000;
   }
 
-  .section-title__lines {
+  &__lines {
     position: relative;
     width: 15rem;
     margin: 0 auto;
@@ -24,15 +24,15 @@ $color: rgba(255, 255, 255, 0.85);
     justify-content: center;
   }
 
-  .section-title__line-wrapper {
+  &__line-wrapper {
     width: 12rem;
   }
 
-  .section-title__line-wrapper--big {
+  &__line-wrapper--big {
     width: 15rem;
   }
 
-  .section-title__line {
+  &__line {
     width: 100%;
     height: 2px;
     background-color: rgba(255, 255, 255, 0.65);
@@ -40,11 +40,27 @@ $color: rgba(255, 255, 255, 0.85);
     transition: all 0.2s linear;
   }
 
-  .section-title__icon {
+  &__icon {
     color: rgba(255, 255, 255, 0.85);
     display: flex;
     align-self: center;
     margin-right: 1rem;
+    z-index: 1;
+  }
+
+  &__heading {
+    z-index: 1;
+  }
+
+  &__contact {
+    .section-title__text {
+      padding-top: 5rem;
+      text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .section-title__line {
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    }
   }
 
   .code-icon {

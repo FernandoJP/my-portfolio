@@ -8,7 +8,7 @@
   &__form-wrapper {
     width: 100%;
     margin: 0 auto;
-    padding: 30px 1px;
+    padding: 30px;
     overflow: hidden;
     z-index: 5;
 
@@ -17,7 +17,7 @@
     }
 
     @include desktop {
-      width: 60%;
+      width: 35%;
       margin: 0 auto;
       padding: 60px;
       overflow: visible;
@@ -122,5 +122,24 @@
       position: absolute;
       z-index: 0;
     }
+  }
+}
+
+.contact-form {
+  &__box {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  &__submit-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  &__submit-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
   }
 }

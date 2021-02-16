@@ -13,14 +13,25 @@
     font-size: 24px;
     overflow: hidden;
     transition: $animation-time-slow/5;
+
+    &--secondary {
+      color: $secondary-color;
+    }
   }
 
   &:hover {
-    color: #11814a;
+    color: darken($primary-color, 15%);
     background: $primary-color;
     box-shadow: 0 0 10px $primary-color, 0 0 40px $primary-color,
       0 0 80px $primary-color;
     transition-delay: $animation-time-slow;
+  }
+
+  &--secondary:hover {
+    color: darken($secondary-color, 15%);
+    background: $secondary-color;
+    box-shadow: 0 0 10px $secondary-color, 0 0 40px $secondary-color,
+      0 0 80px $secondary-color;
   }
 
   span {
@@ -81,5 +92,20 @@
     bottom: 100%;
     transition: $animation-time-slow;
     transition-delay: $animation-time-slow * 0.75;
+  }
+
+  &--secondary {
+    span:nth-child(1) {
+      background: linear-gradient(90deg, transparent, $secondary-color);
+    }
+    span:nth-child(2) {
+      background: linear-gradient(180deg, transparent, $secondary-color);
+    }
+    span:nth-child(3) {
+      background: linear-gradient(270deg, transparent, $secondary-color);
+    }
+    span:nth-child(4) {
+      background: linear-gradient(360deg, transparent, $secondary-color);
+    }
   }
 }
