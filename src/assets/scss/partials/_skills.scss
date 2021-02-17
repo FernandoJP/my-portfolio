@@ -8,7 +8,7 @@ $bar-width: 5rem;
   background: #c33764;
   background: -webkit-linear-gradient(to right, #1d2671, #c33764);
   background: linear-gradient(to right, #1d2671, #c33764);
-  padding: 0;
+  padding: 5rem 0 0 0;
 
   @include desktop {
     padding: 100px;
@@ -133,6 +133,10 @@ $bar-width: 5rem;
     animation: animate 10s linear infinite;
     animation-delay: calc(-1s * var(--i));
     overflow: hidden;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   @keyframes animate {

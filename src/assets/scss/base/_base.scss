@@ -56,3 +56,21 @@ a {
   font-family: Logo Middle;
   src: url("../fonts/Logo-Middle.ttf") format("truetype");
 }
+
+@media only screen and (min-width: 0) {
+  html {
+    zoom: 0.8;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  html {
+    zoom: 0.9;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  html {
+    zoom: 1;
+  }
+}

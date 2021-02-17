@@ -6,20 +6,28 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 25px 100px;
+  padding: 12px 0;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: 0.5s;
 
+  @include desktop {
+    padding: 25px 100px;
+  }
+
   &--sticky {
     background: #fff;
-    padding: 10px 100px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 12px 0;
+
+    @include desktop {
+      padding: 10px 100px;
+    }
 
     .header__logo {
-      color: #111;
+      color: #222;
 
       span {
         &:nth-child(3),
@@ -36,7 +44,7 @@
 
   &__logo {
     color: #fff;
-    font-size: 24px;
+    font-size: 1.6em;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 2px;

@@ -4,6 +4,8 @@ const bodyRect = document.body.getBoundingClientRect(),
     elemRect = document.querySelector('.sun').getBoundingClientRect(),
     offset   = elemRect.top - bodyRect.top;
 
+    console.log(offset);
+
 window.addEventListener('scroll', () => {
     const sunEl = document.querySelector('.sun');
     const rayEl = document.querySelector('.ray-wrapper');
@@ -24,7 +26,6 @@ window.addEventListener('scroll', () => {
     const brightnessMinMax = minMax((1000  * (1000 / (elTop+10000))*0.5-50) * 0.5 + 0.5, 0.8, 1.5);
     const imageFilterCss = `saturate(${saturationMinMax}) brightness(${brightnessMinMax})`;
 
-    console.log(saturationMinMax, brightnessMinMax);
     sunEl.style.top = elTopMinMax+'rem';
     sunEl.style.boxShadow = `0 0 ${shadowBlurMinMax}px ${shadowSpreadMinMax}px #fff`;
     rayEl.style.top = elTopMinMax+'rem';

@@ -5,6 +5,10 @@
   background: #151521;
   padding: 0;
 
+  @include mobile {
+    overflow: hidden;
+  }
+
   &__form-wrapper {
     width: 100%;
     margin: 0 auto;

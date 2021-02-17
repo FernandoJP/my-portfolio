@@ -30,6 +30,10 @@
       filter: opacity(0);
       animation: banner-animation 1s normal forwards ease-in-out;
       animation-delay: calc(0.1s * var(--i));
+
+      @include mobile {
+        display: none;
+      }
     }
 
     @keyframes banner-animation {
@@ -146,6 +150,10 @@
       font-family: SourceCodePro-LightItalic;
       position: absolute;
       left: 27%;
+
+      @include mobile {
+        content: "";
+      }
     }
 
     &::after {
@@ -155,6 +163,10 @@
       font-family: SourceCodePro-LightItalic;
       position: absolute;
       right: -60px;
+
+      @include mobile {
+        content: "";
+      }
     }
 
     span {
@@ -179,6 +191,10 @@
       position: absolute;
       transform: translateX(-30px);
       top: 5px;
+
+      @include mobile {
+        content: "";
+      }
     }
 
     &::after {
@@ -189,6 +205,10 @@
       position: absolute;
       margin-left: 5px;
       top: 5px;
+
+      @include mobile {
+        content: "";
+      }
     }
   }
 
@@ -203,6 +223,10 @@
       position: absolute;
       text-transform: lowercase;
       top: calc(50% - 8px);
+
+      @include mobile {
+        content: "";
+      }
     }
 
     &::after {
@@ -215,6 +239,10 @@
       position: absolute;
       top: calc(50% - 8px);
       margin-left: -1.2rem;
+
+      @include mobile {
+        content: "";
+      }
     }
   }
 
